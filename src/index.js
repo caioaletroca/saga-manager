@@ -3,10 +3,14 @@ export * from './createSaga';
 export * from './createStateReducer';
 
 /**
- * Stores the instance of the storage
+ * Holds the redux store instance
  */
 export let store = {};
 
+/**
+ * Instantiate the redux store
+ * @param {*} param 
+ */
 export function registerStorage(param) {
     store = param;
 }
