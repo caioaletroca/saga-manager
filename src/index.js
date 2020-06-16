@@ -1,6 +1,7 @@
 export * from './createAsyncAction';
 export * from './createSaga';
 export * from './createStateReducer';
+export * from './sequentialRequest';
 
 /**
  * Holds the redux store instance

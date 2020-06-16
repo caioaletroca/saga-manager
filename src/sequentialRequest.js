@@ -5,12 +5,18 @@ import get from 'lodash/get'
  * the result of the previous request
  * @param {*} requests 
  */
-export function sequentialRequest(requests = []) {
+export function sequentialRequest(requests = [], errorHandling = true) {
   return async (props) => {
     let data = [];
-    for(const action of requests) {
-      const response = await action(props, data);
-      data.push(get(response, 'data'));
+    try {
+      for(const action of requests) {
+        const response = await action(props, data);
+        data.push(get(response, 'data'));
+      }
+    }
+    catch (e) {
+      if(errorHandling)
+        throw e;
     }
     return { data };
   }

@@ -25,7 +25,7 @@ export function createSaga(
         onSuccess = actions.onSuccess
         onError = actions.onError
         onLoading = actions.onLoading ? actions.onLoading : onLoading;
-        shouldStop = actions.shouldStop;
+        shouldStop = actions.shouldStop ? actions.shouldStop : shouldStop;
         actions = actions.actions;
       }
   
