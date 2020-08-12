@@ -9,6 +9,6 @@ export function parallelRequest(requests = []) {
   return async (props) => {
     const response = await Promise.all(request.map(action => action(props)));
 
-    return response.map(item => get(item, 'data'));
+    return { data: response.map(item => get(item, 'data')) };
   }
 }
