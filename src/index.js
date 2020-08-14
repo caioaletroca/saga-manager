@@ -2,6 +2,7 @@ export * from './createAsyncAction';
 export * from './createSaga';
 export * from './createStateReducer';
 export * from './sequentialRequest';
+export * from './registerSagas';
 
 /**
  * Holds the redux store instance
