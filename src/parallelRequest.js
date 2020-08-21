@@ -7,7 +7,7 @@ import get from 'lodash/get'
  */
 export function parallelRequest(requests = []) {
   return async (props) => {
-    const response = await Promise.all(request.map(action => action(props)));
+    const response = await Promise.all(requests.map(action => action(props)));
 
     return { data: response.map(item => get(item, 'data')) };
   }
